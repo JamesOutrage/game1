@@ -796,7 +796,7 @@ class Menu(arcade.View):
                 self.max_level = int(data[0])
                 self.passed = [bool(int(x)) for x in data[1:4]]
         
-        tracks = ["hotline_miami.mp3", "hotline_miami2.mp3", "hotline_miami3.mp3"]
+        tracks = ["hotline_miami2.mp3", "hotline_miami3.mp3"]
         for track in tracks:
             if os.path.exists(track):
                 self.current = track
@@ -810,7 +810,7 @@ class Menu(arcade.View):
             self.next_track()
     
     def next_track(self):
-        tracks = ["hotline_miami.mp3", "hotline_miami2.mp3", "hotline_miami3.mp3"]
+        tracks = ["hotline_miami2.mp3", "hotline_miami3.mp3"]
         avail = [t for t in tracks if t != self.current and os.path.exists(t)]
         if avail:
             self.current = random.choice(avail)
